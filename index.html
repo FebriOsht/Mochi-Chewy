@@ -317,54 +317,59 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            
-            .navbar .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                gap: 0;
-                flex-direction: column;
-                background-color: var(--light-color);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-            }
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Penyesuaian Font & Spasi Global */
+    h1 { font-size: 2.2rem; } /* Judul utama sedikit lebih kecil */
+    h2 { font-size: 1.8rem; }
+    section { padding: 60px 0; } /* Jarak antar section dikurangi */
 
-            .navbar .nav-links.active {
-                left: 0;
-            }
+    /* Navigasi Mobile */
+    .navbar .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--light-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
 
-            .navbar .nav-links a {
-                display: block;
-                padding: 20px;
-                border-bottom: 1px solid #ddd;
-            }
+    .navbar .nav-links.active {
+        left: 0;
+    }
 
-            .hamburger {
-                display: flex;
-            }
+    .navbar .nav-links a {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
 
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-            
-            .about-grid, .split-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .about-grid img { grid-row: 1; }
-            #hero { height: 90vh; }
-        }
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    /* Penyesuaian Hero Section */
+    #hero { height: 90vh; }
+    #hero .cta-buttons .btn {
+        padding: 10px 22px; /* Tombol sedikit lebih kecil */
+        font-size: 0.9rem;
+    }
+
+    /* Penyesuaian Layout Grid */
+    .about-grid, .split-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-grid img { grid-row: 1; }
     </style>
 </head>
 <body>
