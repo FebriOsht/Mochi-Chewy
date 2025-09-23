@@ -1,518 +1,1025 @@
 <!DOCTYPE html>
+
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOCHI CHEWY - Kenyalnya Bikin Gagal Move-On!</title>
-    <meta name="description" content="MOCHI CHEWY adalah jajanan mochi kekinian dengan tekstur super chewy dan isian lumer yang meledak di mulut. Temukan 8 cabang kami di Bekasi Utara!">
-    
-    <link rel="icon" type="image/png" href="img/logo mochi chewy.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS Reset & Basic Styling */
-        :root {
-            --primary-color: #FF6B6B;
-            --secondary-color: #FFD93D;
-            --dark-color: #444;
-            --light-color: #FFF8F0;
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Lato', sans-serif;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    <meta charset="UTF-8">
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
+    <title>MOCHI CHEWY - Kenyalnya Bikin Gagal Move-On!</title>
 
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        h1 { font-size: 3.5rem; font-weight: 900; }
-        h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        section { padding: 80px 0; }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-family: var(--font-heading);
-        }
+    <meta name="description" content="MOCHI CHEWY adalah jajanan mochi kekinian dengan tekstur super chewy dan isian lumer yang meledak di mulut. Temukan 8 cabang kami di Bekasi Utara!">
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+    
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
+    <link rel="icon" type="image/png" href="img/logo mochi chewy.png">
 
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        /* Header & Navigasi */
-        .navbar {
-            background: rgba(255, 248, 240, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .navbar .logo img {
-            height: 50px;
-            width: auto;
-            vertical-align: middle;
-        }
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .navbar .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        .navbar .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 700;
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-        .navbar .nav-links a:hover {
-            border-bottom-color: var(--primary-color);
-        }
+    
 
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
+    <style>
 
-        .hamburger .bar {
-            width: 25px;
-            height: 3px;
-            background-color: var(--dark-color);
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
+        /* CSS Reset & Basic Styling */
 
-        /* Hero Section */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 70px; /* Jarak dari navbar */
-        }
-        
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/background.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(5px);
-            z-index: -1;
-        }
+        :root {
 
-        #hero h1 {
-            color: white;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
+            --primary-color: #FF6B6B;
 
-        #hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 20px auto 30px;
-            color: white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-        }
-        
-        #hero .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+            --secondary-color: #FFD93D;
 
-        .about-grid img {
-            width: 100%;
-            border-radius: 20px;
-        }
-        
-        .features-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-        
-        .features-list li {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-        .features-list li strong {
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
+            --dark-color: #444;
 
-        /* Menu Section */
-        #menu {
-            background-color: white;
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .menu-item {
-            background: var(--light-color);
-            border-radius: 15px;
-            overflow: hidden;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .menu-item-content {
-            padding: 20px;
-        }
-        .menu-item-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
+            --light-color: #FFF8F0;
 
-        /* Locations & Events Section */
-        .split-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: flex-start;
-        }
-        .location-list li, .event-list li {
-            margin-bottom: 10px;
-        }
-        .location-list a {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        #events {
-            background-color: var(--secondary-color);
-            border-radius: 20px;
-            padding: 40px;
-        }
-        #events h2 {
-            color: var(--dark-color);
-        }
+            --font-heading: 'Poppins', sans-serif;
 
-        /* Testimonials Section */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid var(--primary-color);
-        }
-        .testimonial-card p { font-style: italic; }
-        .testimonial-card h4 {
-            margin-top: 15px;
-            color: var(--primary-color);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 60px 0;
-        }
+            --font-body: 'Lato', sans-serif;
 
-        footer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
+        }
 
-        /* Styling untuk Logo Media Sosial di Footer */
-        .social-icons a img {
-            height: 35px; /* Sesuaikan ukuran logo */
-            width: auto;
-            margin: 0 10px; /* Memberi jarak antar logo */
-            vertical-align: middle;
-            transition: transform 0.3s ease;
-        }
 
-        .social-icons a img:hover {
-            transform: scale(1.1); /* Efek sedikit membesar saat di-hover */
-        }
-        
-        footer .tagline {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
 
-        /* Responsive Design */
-/* Responsive Design */
-@media (max-width: 768px) {
-    /* Penyesuaian Font & Spasi Global */
-    h1 { font-size: 2.2rem; } /* Judul utama sedikit lebih kecil */
-    h2 { font-size: 1.8rem; }
-    section { padding: 60px 0; } /* Jarak antar section dikurangi */
+        * {
 
-    /* Navigasi Mobile */
-    .navbar .nav-links {
-        position: fixed;
-        left: -100%;
-        top: 80px;
-        gap: 0;
-        flex-direction: column;
-        background-color: var(--light-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    }
+            margin: 0;
 
-    .navbar .nav-links.active {
-        left: 0;
-    }
+            padding: 0;
 
-    .navbar .nav-links a {
-        display: block;
-        padding: 20px;
-        border-bottom: 1px solid #ddd;
-    }
+            box-sizing: border-box;
 
-    .hamburger {
-        display: flex;
-    }
+            scroll-behavior: smooth;
 
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    
-    /* Penyesuaian Hero Section */
-    #hero { height: 90vh; }
-    #hero .cta-buttons .btn {
-        padding: 10px 22px; /* Tombol sedikit lebih kecil */
-        font-size: 0.9rem;
-    }
+        }
 
-    /* Penyesuaian Layout Grid */
-    .about-grid, .split-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-    .about-grid img { grid-row: 1; }
-    </style>
+
+
+        body {
+
+            font-family: var(--font-body);
+
+            background-color: var(--light-color);
+
+            color: var(--dark-color);
+
+            line-height: 1.6;
+
+        }
+
+
+
+        .container {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 0 30px;
+
+        }
+
+
+
+        h1, h2, h3 {
+
+            font-family: var(--font-heading);
+
+            font-weight: 700;
+
+            line-height: 1.2;
+
+        }
+
+        
+
+        h1 { font-size: 3.5rem; font-weight: 900; }
+
+        h2 { font-size: 2.5rem; margin-bottom: 20px; }
+
+        section { padding: 80px 0; }
+
+        
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 12px 28px;
+
+            border-radius: 50px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            font-family: var(--font-heading);
+
+        }
+
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        .btn-primary {
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+        }
+
+
+
+        .btn-secondary {
+
+            background-color: var(--secondary-color);
+
+            color: var(--dark-color);
+
+        }
+
+
+
+        /* Header & Navigasi */
+
+        .navbar {
+
+            background: rgba(255, 248, 240, 0.8);
+
+            backdrop-filter: blur(10px);
+
+            padding: 15px 0;
+
+            position: fixed;
+
+            width: 100%;
+
+            z-index: 1000;
+
+        }
+
+        
+
+        .navbar .container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        
+
+        .navbar .logo img {
+
+            height: 50px;
+
+            width: auto;
+
+            vertical-align: middle;
+
+        }
+
+
+
+        .navbar .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+
+        }
+
+        
+
+        .navbar .nav-links a {
+
+            text-decoration: none;
+
+            color: var(--dark-color);
+
+            font-weight: 700;
+
+            padding-bottom: 5px;
+
+            border-bottom: 2px solid transparent;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .navbar .nav-links a:hover {
+
+            border-bottom-color: var(--primary-color);
+
+        }
+
+
+
+        .hamburger {
+
+            display: none;
+
+            cursor: pointer;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+        }
+
+
+
+        .hamburger .bar {
+
+            width: 25px;
+
+            height: 3px;
+
+            background-color: var(--dark-color);
+
+            border-radius: 5px;
+
+            transition: all 0.3s ease-in-out;
+
+        }
+
+
+
+        /* Hero Section */
+
+        #hero {
+
+            height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding-top: 70px; /* Jarak dari navbar */
+
+        }
+
+        
+
+        #hero::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/background.jpg');
+
+            background-size: cover;
+
+            background-position: center;
+
+            filter: blur(5px);
+
+            z-index: -1;
+
+        }
+
+
+
+        #hero h1 {
+
+            color: white;
+
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+
+        }
+
+
+
+        #hero p {
+
+            font-size: 1.2rem;
+
+            max-width: 600px;
+
+            margin: 20px auto 30px;
+
+            color: white;
+
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+
+        }
+
+        
+
+        #hero .cta-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+        
+
+        /* About Section */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            align-items: center;
+
+        }
+
+
+
+        .about-grid img {
+
+            width: 100%;
+
+            border-radius: 20px;
+
+        }
+
+        
+
+        .features-list {
+
+            list-style: none;
+
+            margin-top: 20px;
+
+        }
+
+        
+
+        .features-list li {
+
+            font-size: 1.1rem;
+
+            margin-bottom: 15px;
+
+        }
+
+        .features-list li strong {
+
+            color: var(--primary-color);
+
+            margin-right: 10px;
+
+        }
+
+
+
+        /* Menu Section */
+
+        #menu {
+
+            background-color: white;
+
+        }
+
+        .menu-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 30px;
+
+            margin-top: 40px;
+
+        }
+
+        .menu-item {
+
+            background: var(--light-color);
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+        }
+
+        .menu-item:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+        }
+
+        .menu-item img {
+
+            width: 100%;
+
+            height: 200px;
+
+            object-fit: cover;
+
+        }
+
+        .menu-item-content {
+
+            padding: 20px;
+
+        }
+
+        .menu-item-content h3 {
+
+            color: var(--primary-color);
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        /* Locations & Events Section */
+
+        .split-section {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: flex-start;
+
+        }
+
+        .location-list li, .event-list li {
+
+            margin-bottom: 10px;
+
+        }
+
+        .location-list a {
+
+            color: var(--primary-color);
+
+            font-weight: bold;
+
+        }
+
+        #events {
+
+            background-color: var(--secondary-color);
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+        }
+
+        #events h2 {
+
+            color: var(--dark-color);
+
+        }
+
+
+
+        /* Testimonials Section */
+
+        .testimonial-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+            margin-top: 40px;
+
+        }
+
+        .testimonial-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            border-left: 5px solid var(--primary-color);
+
+        }
+
+        .testimonial-card p { font-style: italic; }
+
+        .testimonial-card h4 {
+
+            margin-top: 15px;
+
+            color: var(--primary-color);
+
+        }
+
+        
+
+        /* Footer */
+
+        footer {
+
+            background: var(--dark-color);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 60px 0;
+
+        }
+
+
+
+        footer h3 {
+
+            font-size: 1.8rem;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        /* Styling untuk Logo Media Sosial di Footer */
+
+        .social-icons a img {
+
+            height: 35px; /* Sesuaikan ukuran logo */
+
+            width: auto;
+
+            margin: 0 10px; /* Memberi jarak antar logo */
+
+            vertical-align: middle;
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+
+        .social-icons a img:hover {
+
+            transform: scale(1.1); /* Efek sedikit membesar saat di-hover */
+
+        }
+
+        
+
+        footer .tagline {
+
+            font-family: var(--font-heading);
+
+            font-weight: 700;
+
+            font-size: 1.2rem;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+
+            h1 { font-size: 2.5rem; }
+
+            h2 { font-size: 2rem; }
+
+            
+
+            .navbar .nav-links {
+
+                position: fixed;
+
+                left: -100%;
+
+                top: 80px;
+
+                gap: 0;
+
+                flex-direction: column;
+
+                background-color: var(--light-color);
+
+                width: 100%;
+
+                text-align: center;
+
+                transition: 0.3s;
+
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+
+            }
+
+
+
+            .navbar .nav-links.active {
+
+                left: 0;
+
+            }
+
+
+
+            .navbar .nav-links a {
+
+                display: block;
+
+                padding: 20px;
+
+                border-bottom: 1px solid #ddd;
+
+            }
+
+
+
+            .hamburger {
+
+                display: flex;
+
+            }
+
+
+
+            .hamburger.active .bar:nth-child(2) {
+
+                opacity: 0;
+
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+
+                transform: translateY(8px) rotate(45deg);
+
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+
+                transform: translateY(-8px) rotate(-45deg);
+
+            }
+
+            
+
+            .about-grid, .split-section {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+            }
+
+            .about-grid img { grid-row: 1; }
+
+            #hero { height: 90vh; }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#" class="logo">
-                    <img src="img/logo mochi chewy.png" alt="Logo Mochi Chewy">
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#about">Cerita Kami</a></li>
-                    <li><a href="#menu">Varian Rasa</a></li>
-                    <li><a href="#locations">Lokasi</a></li>
-                    <li><a href="#events">Events</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1>WARNING: Kenyalnya Bikin Gagal Move-On!</h1>
-                <p>Lupakan semua mochi yang pernah kamu coba. MOCHI CHEWY hadir dengan tekstur chewy level dewa dan isian lumer yang meledak di mulut. Siap-siap ketagihan!</p>
-                <div class="cta-buttons">
-                    <a href="#menu" class="btn btn-primary">Kepoin Varian Rasanya!</a>
-                    <a href="#locations" class="btn btn-secondary">Cari Markas Terdekat!</a>
-                </div>
-            </div>
-        </section>
 
-        <section id="about">
-            <div class="container about-grid">
-                <div class="about-text">
-                    <h2>Dari Dapur Rumah, Menjadi 8 Markas Besar!</h2>
-                    <p>Percaya nggak, mochi-volution ini dimulai 7 September 2023? Dari satu resep rahasia, MOCHI CHEWY kini jadi rebutan di 8 cabang se-Bekasi Utara! Rahasianya? Kami nggak pernah main-main soal rasa. Setiap gigitan adalah bukti cinta kami pada jajanan kekinian yang sempurna.</p>
-                    <ul class="features-list">
-                        <li><strong>✨ The Ultimate Chew:</strong> Tekstur kenyal yang pas, bikin nagihnya gak ada obat.</li>
-                        <li><strong>🎉 Ledakan Rasa:</strong> Isiannya melimpah ruah, siap meledak di setiap gigitan.</li>
-                        <li><strong>💡 Anti-Bosen Club:</strong> Varian rasa kami selalu update, dari yang klasik sampai yang gokil!</li>
-                        <li><strong>☀️ Fresh From The Lab:</strong> Dibuat setiap hari, karena mochi paling enak itu yang masih fresh!</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <img src="img/mochi chewy.jpg" alt="Tim Mochi Chewy sedang membuat mochi">
-                </div>
-            </div>
-        </section>
+    <header>
 
-        <section id="menu">
-            <div class="container" style="text-align: center;">
-                <h2>Pasukan Rasa Siap Menyerbu Lidahmu!</h2>
-                <p>Pilih jagoanmu! Apakah kamu tim Cokelat Klasik atau tim Eksperimental yang berani?</p>
-                <div class="menu-grid">
-                    <div class="menu-item"><img src="https://placehold.co/400x300/A0DEFF/444444?text=Choco+Xplosion" alt="Mochi Choco Xplosion"><div class="menu-item-content"><h3>Choco Xplosion</h3><p>Bukan cuma cokelat. Ini perpaduan cokelat premium dengan butiran krispi rahasia. Kresss... lumer... wow!</p></div></div>
-                    <div class="menu-item"><img src="https://placehold.co/400x300/FFB6C1/444444?text=Strawberry+Cloud" alt="Mochi Strawberry Cloud"><div class="menu-item-content"><h3>Strawberry Cloud</h3><p>Sensasi cheesecake stroberi favoritmu, sekarang bisa digenggam. Lembut, manis, asem, jadi satu!</p></div></div>
-                    <div class="menu-item"><img src="https://placehold.co/400x300/C1FFC1/444444?text=Matcha+Zen" alt="Mochi Matcha Zen"><div class="menu-item-content"><h3>Matcha Zen</h3><p>Rasa matcha otentik dipeluk manisnya kacang merah. Damai dan menenangkan di setiap gigitan.</p></div></div>
-                    <div class="menu-item"><img src="https://placehold.co/400x300/F4A460/444444?text=Biscoff+Hype" alt="Mochi Biscoff Hype"><div class="menu-item-content"><h3>Biscoff Hype</h3><p>Hype biskuit legendaris ini kita bungkus dalam mochi kenyal. Dijamin bikin kamu ikut nge-hype!</p></div></div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="locations">
-            <div class="container split-section">
-                <div class="locations-info">
-                    <h2>Jemput Kebahagiaan Kenyalmu di Sini!</h2>
-                    <p>Nggak perlu nunggu lama! Langsung serbu 8 markas MOCHI CHEWY yang tersebar di Bekasi Utara. We are waiting for you!</p>
-                    <ul class="location-list">
-                        <li>✅ Mochi Chewy Harapan Indah - <a href="https://maps.app.goo.gl/ZUpJJQNq7FWeXzCC7" target="_blank">Cek Rute!</a></li>
-                        <li>✅ Mochi Chewy Depan Steam Candrabaga - <a href="https://maps.app.goo.gl/pWFiR8VCG4yrLbgE7" target="_blank">Cek Rute!</a></li>
-                        <li>✅ Mochi Chewy Pondok Ungu Permai - <a href="https://maps.app.goo.gl/hqKrphjVoevRvirJ6" target="_blank">Cek Rute!</a></li>
-                        <li>✅ Mochi Chewy Goldencity - <a href="https://maps.app.goo.gl/Qud4Ru9vDSZaPYX8A" target="_blank">Cek Rute!</a></li>
-                    </ul>
-                </div>
-                <div id="events">
-                    <h2>Bikin Acaramu Paling Hits & Kekinian!</h2>
-                    <p>MOCHI CHEWY adalah party crasher profesional yang siap bikin acaramu jadi omongan. Kami hadir di:</p>
-                    <ul class="event-list">
-                        <li>Bazaar Sekolah & Kampus</li>
-                        <li>Event Perkantoran</li>
-                        <li>Car Free Day (CFD)</li>
-                        <li>Area Rumah Sakit</li>
-                    </ul>
-                    <a href="https://www.instagram.com/mochichewymarakash?igsh=d3d1Mjkzd3lsd25t" class="btn btn-primary">BOOK KAMI SEKARANG!</a>
-                </div>
-            </div>
-        </section>
+        <nav class="navbar">
 
-        <section id="testimonials">
-            <div class="container" style="text-align: center;">
-                <h2>Scroll Dulu Testi dari #ChewyLovers!</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial-card"><p>"Gilaaa, isiannya brutal bangeeet! 😭❤️ Gak rela bagi-bagi sama temen kantor. Fix, bakal repeat order!"</p><h4>- @dianacakes</h4></div>
-                    <div class="testimonial-card"><p>"The best mochi in town, no debat! Udah coba beberapa rasa dan semuanya enak. Tempatnya juga asik buat nongkrong."</p><h4>- Budi Santoso</h4></div>
-                    <div class="testimonial-card"><p>"Nemuin harta karun di bazaar CFD! Langsung borong buat stok seminggu. Anak-anak suka banget yang rasa strawberry."</p><h4>- Sarah Amelia</h4></div>
-                </div>
-            </div>
-        </section>
-    </main>
+            <div class="container">
 
-    <footer>
-        <div class="container">
-            <h3>Jangan Jadi Orang Asing, Yuk Ngobrol!</h3>
-            <p>Ikuti petualangan kenyal kami di media sosial!</p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/mochichewymarakash?igsh=d3d1Mjkzd3lsd25t" target="_blank" title="Instagram Mochi Chewy">
-                    <img src="img/Instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.tiktok.com/@mochichewymarakash?_t=ZS-8zwM6zM2dog&_r=1" target="_blank" title="TikTok Mochi Chewy">
-                    <img src="img/tiktok.jpg" alt="TikTok">
-                </a>
-                <a href="https://wa.me/nomor_whatsapp_anda" target="_blank" title="WhatsApp Mochi Chewy">
-                    <img src="img/wa.png" alt="WhatsApp">
-                </a>
-            </div>
-            <p class="tagline">MOCHI CHEWY. Kenyalnya Beda, Nagihnya Gak Ada Obat.</p>
-            <p>&copy; 2025 MOCHI CHEWY | Built with 💖 and lots of sugar.</p>
-        </div>
-    </footer>
+                <a href="#" class="logo">
 
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
+                    <img src="img/logo mochi chewy.png" alt="Logo Mochi Chewy">
 
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
-        });
+                </a>
 
-        // Menutup menu saat link di-klik (untuk navigasi di halaman yang sama)
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navLinks.classList.remove("active");
-            });
-        });
-    </script>
+                <ul class="nav-links">
+
+                    <li><a href="#about">Cerita Kami</a></li>
+
+                    <li><a href="#menu">Varian Rasa</a></li>
+
+                    <li><a href="#locations">Lokasi</a></li>
+
+                    <li><a href="#events">Events</a></li>
+
+                </ul>
+
+                <div class="hamburger">
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                    <span class="bar"></span>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+        <section id="hero">
+
+            <div class="container">
+
+                <h1>WARNING: Kenyalnya Bikin Gagal Move-On!</h1>
+
+                <p>Lupakan semua mochi yang pernah kamu coba. MOCHI CHEWY hadir dengan tekstur chewy level dewa dan isian lumer yang meledak di mulut. Siap-siap ketagihan!</p>
+
+                <div class="cta-buttons">
+
+                    <a href="#menu" class="btn btn-primary">Kepoin Varian Rasanya!</a>
+
+                    <a href="#locations" class="btn btn-secondary">Cari Markas Terdekat!</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="about">
+
+            <div class="container about-grid">
+
+                <div class="about-text">
+
+                    <h2>Dari Dapur Rumah, Menjadi 8 Markas Besar!</h2>
+
+                    <p>Percaya nggak, mochi-volution ini dimulai 7 September 2023? Dari satu resep rahasia, MOCHI CHEWY kini jadi rebutan di 8 cabang se-Bekasi Utara! Rahasianya? Kami nggak pernah main-main soal rasa. Setiap gigitan adalah bukti cinta kami pada jajanan kekinian yang sempurna.</p>
+
+                    <ul class="features-list">
+
+                        <li><strong>✨ The Ultimate Chew:</strong> Tekstur kenyal yang pas, bikin nagihnya gak ada obat.</li>
+
+                        <li><strong>🎉 Ledakan Rasa:</strong> Isiannya melimpah ruah, siap meledak di setiap gigitan.</li>
+
+                        <li><strong>💡 Anti-Bosen Club:</strong> Varian rasa kami selalu update, dari yang klasik sampai yang gokil!</li>
+
+                        <li><strong>☀️ Fresh From The Lab:</strong> Dibuat setiap hari, karena mochi paling enak itu yang masih fresh!</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="about-image">
+
+                    <img src="img/mochi chewy.jpg" alt="Tim Mochi Chewy sedang membuat mochi">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="menu">
+
+            <div class="container" style="text-align: center;">
+
+                <h2>Pasukan Rasa Siap Menyerbu Lidahmu!</h2>
+
+                <p>Pilih jagoanmu! Apakah kamu tim Cokelat Klasik atau tim Eksperimental yang berani?</p>
+
+                <div class="menu-grid">
+
+                    <div class="menu-item"><img src="https://placehold.co/400x300/A0DEFF/444444?text=Choco+Xplosion" alt="Mochi Choco Xplosion"><div class="menu-item-content"><h3>Choco Xplosion</h3><p>Bukan cuma cokelat. Ini perpaduan cokelat premium dengan butiran krispi rahasia. Kresss... lumer... wow!</p></div></div>
+
+                    <div class="menu-item"><img src="https://placehold.co/400x300/FFB6C1/444444?text=Strawberry+Cloud" alt="Mochi Strawberry Cloud"><div class="menu-item-content"><h3>Strawberry Cloud</h3><p>Sensasi cheesecake stroberi favoritmu, sekarang bisa digenggam. Lembut, manis, asem, jadi satu!</p></div></div>
+
+                    <div class="menu-item"><img src="https://placehold.co/400x300/C1FFC1/444444?text=Matcha+Zen" alt="Mochi Matcha Zen"><div class="menu-item-content"><h3>Matcha Zen</h3><p>Rasa matcha otentik dipeluk manisnya kacang merah. Damai dan menenangkan di setiap gigitan.</p></div></div>
+
+                    <div class="menu-item"><img src="https://placehold.co/400x300/F4A460/444444?text=Biscoff+Hype" alt="Mochi Biscoff Hype"><div class="menu-item-content"><h3>Biscoff Hype</h3><p>Hype biskuit legendaris ini kita bungkus dalam mochi kenyal. Dijamin bikin kamu ikut nge-hype!</p></div></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        
+
+        <section id="locations">
+
+            <div class="container split-section">
+
+                <div class="locations-info">
+
+                    <h2>Jemput Kebahagiaan Kenyalmu di Sini!</h2>
+
+                    <p>Nggak perlu nunggu lama! Langsung serbu 8 markas MOCHI CHEWY yang tersebar di Bekasi Utara. We are waiting for you!</p>
+
+                    <ul class="location-list">
+
+                        <li>✅ Mochi Chewy Harapan Indah - <a href="https://maps.app.goo.gl/ZUpJJQNq7FWeXzCC7" target="_blank">Cek Rute!</a></li>
+
+                        <li>✅ Mochi Chewy Depan Steam Candrabaga - <a href="https://maps.app.goo.gl/pWFiR8VCG4yrLbgE7" target="_blank">Cek Rute!</a></li>
+
+                        <li>✅ Mochi Chewy Pondok Ungu Permai - <a href="https://maps.app.goo.gl/hqKrphjVoevRvirJ6" target="_blank">Cek Rute!</a></li>
+
+                        <li>✅ Mochi Chewy Goldencity - <a href="https://maps.app.goo.gl/Qud4Ru9vDSZaPYX8A" target="_blank">Cek Rute!</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div id="events">
+
+                    <h2>Bikin Acaramu Paling Hits & Kekinian!</h2>
+
+                    <p>MOCHI CHEWY adalah party crasher profesional yang siap bikin acaramu jadi omongan. Kami hadir di:</p>
+
+                    <ul class="event-list">
+
+                        <li>Bazaar Sekolah & Kampus</li>
+
+                        <li>Event Perkantoran</li>
+
+                        <li>Car Free Day (CFD)</li>
+
+                        <li>Area Rumah Sakit</li>
+
+                    </ul>
+
+                    <a href="https://www.instagram.com/mochichewymarakash?igsh=d3d1Mjkzd3lsd25t" class="btn btn-primary">BOOK KAMI SEKARANG!</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="testimonials">
+
+            <div class="container" style="text-align: center;">
+
+                <h2>Scroll Dulu Testi dari #ChewyLovers!</h2>
+
+                <div class="testimonial-grid">
+
+                    <div class="testimonial-card"><p>"Gilaaa, isiannya brutal bangeeet! 😭❤️ Gak rela bagi-bagi sama temen kantor. Fix, bakal repeat order!"</p><h4>- @dianacakes</h4></div>
+
+                    <div class="testimonial-card"><p>"The best mochi in town, no debat! Udah coba beberapa rasa dan semuanya enak. Tempatnya juga asik buat nongkrong."</p><h4>- Budi Santoso</h4></div>
+
+                    <div class="testimonial-card"><p>"Nemuin harta karun di bazaar CFD! Langsung borong buat stok seminggu. Anak-anak suka banget yang rasa strawberry."</p><h4>- Sarah Amelia</h4></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="container">
+
+            <h3>Jangan Jadi Orang Asing, Yuk Ngobrol!</h3>
+
+            <p>Ikuti petualangan kenyal kami di media sosial!</p>
+
+            <div class="social-icons">
+
+                <a href="https://www.instagram.com/mochichewymarakash?igsh=d3d1Mjkzd3lsd25t" target="_blank" title="Instagram Mochi Chewy">
+
+                    <img src="img/Instagram.png" alt="Instagram">
+
+                </a>
+
+                <a href="https://www.tiktok.com/@mochichewymarakash?_t=ZS-8zwM6zM2dog&_r=1" target="_blank" title="TikTok Mochi Chewy">
+
+                    <img src="img/tiktok.jpg" alt="TikTok">
+
+                </a>
+
+                <a href="https://wa.me/nomor_whatsapp_anda" target="_blank" title="WhatsApp Mochi Chewy">
+
+                    <img src="img/wa.png" alt="WhatsApp">
+
+                </a>
+
+            </div>
+
+            <p class="tagline">MOCHI CHEWY. Kenyalnya Beda, Nagihnya Gak Ada Obat.</p>
+
+            <p>&copy; 2025 MOCHI CHEWY | Built with 💖 and lots of sugar.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        const hamburger = document.querySelector(".hamburger");
+
+        const navLinks = document.querySelector(".nav-links");
+
+
+
+        hamburger.addEventListener("click", () => {
+
+            hamburger.classList.toggle("active");
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+
+        // Menutup menu saat link di-klik (untuk navigasi di halaman yang sama)
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                hamburger.classList.remove("active");
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+    </script>
+
+
 
 </body>
+
 </html>
